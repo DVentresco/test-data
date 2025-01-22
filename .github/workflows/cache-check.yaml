@@ -1,0 +1,19 @@
+name: Download and cache
+
+on: push
+
+jobs:
+  download-and-cache:
+    runs-on: ubuntu-latest
+
+    container:
+      image: sbtscala/scala-sbt:eclipse-temurin-17.0.13_11_1.10.7_3.6.3
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Check version
+        run: |
+          sbt --version
+        continue-on-error: false
