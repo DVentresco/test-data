@@ -1,0 +1,14 @@
+name: Build Workflow Image
+
+on: push
+
+jobs:
+  image-builder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .github/workflows/
+          push: true
+          tags: test:latest
