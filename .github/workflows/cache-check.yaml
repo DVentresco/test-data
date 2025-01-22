@@ -21,6 +21,10 @@ jobs:
 
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           echo $PATH
+          
+          ls /home
+          
+          ls /home/runner/.local/share/coursier/bin
       #          brew install coursier/formulas/coursier
 #          cs setup --yes
 #          brew install grype
