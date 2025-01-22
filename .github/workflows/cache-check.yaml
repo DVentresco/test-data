@@ -16,7 +16,8 @@ jobs:
       - name: Install Coursier
         run: |
           curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup --yes
-          export PATH="/home/runner/local/share/coursier/bin"
+          
+          export PATH="$PATH:/home/runner/.local/share/coursier/bin"
 
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           echo $PATH
