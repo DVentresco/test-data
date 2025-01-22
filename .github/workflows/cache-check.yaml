@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Install Coursier
         run: |
-          curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup --yes
+          curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup --yes && chmod +x ~/.local/share/coursier/bin/sbt
           
           export PATH="$PATH:~/.local/share/coursier/bin"
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
