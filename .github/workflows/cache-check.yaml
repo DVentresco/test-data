@@ -15,8 +15,9 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           echo $PATH
           ls /home
-          ls /home/runner/.local/share/coursier/bin
+          ls -lto /home/runner/.local/share/coursier/bin
 
       - name: Check version
         run: |
+          /home/runner/.local/share/coursier/bin/sbt --version
           sbt --version
