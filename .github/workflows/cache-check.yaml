@@ -10,14 +10,12 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-#      - name: Set up Homebrew
-#        uses: Homebrew/actions/setup-homebrew@master
 
       - name: Install Coursier
         run: |
           curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup --yes
           
-#          export PATH="$PATH:/home/runner/.local/share/coursier/bin"
+        #export PATH="$PATH:/home/runner/.local/share/coursier/bin"
 
           export PATH="$PATH:~/.local/share/coursier/bin"
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
@@ -27,8 +25,8 @@ jobs:
           
           ls /home/runner/.local/share/coursier/bin
       #          brew install coursier/formulas/coursier
-#          cs setup --yes
-#          brew install grype
+      #          cs setup --yes
+      #          brew install grype
 
       
       
