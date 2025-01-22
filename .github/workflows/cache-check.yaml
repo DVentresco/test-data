@@ -13,11 +13,17 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Install Tools
+      - name: Install Coursier
         run: |
           brew install coursier/formulas/coursier
+
+      # Secondary step to refresh shell to access tools on path
+      - name: Install Tools
+        run: |
           sudo cs setup --yes
           brew install grype
+      
+      
 
       - name: Check version
         run: |
