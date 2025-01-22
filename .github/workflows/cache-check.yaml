@@ -20,7 +20,7 @@ jobs:
       # Secondary step to refresh shell to access tools on path
       - name: Install Tools
         run: |
-          sudo cs setup --yes
+          cs setup --yes
           brew install grype
       
       
