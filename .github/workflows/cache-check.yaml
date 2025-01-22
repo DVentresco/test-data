@@ -11,11 +11,10 @@ jobs:
         run: |
           curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup --yes
           
-          export PATH="/home/runner/.local/share/coursier/bin:$PATH"
+          echo "/home/runner/.local/share/coursier/bin" >> $GITHUB_PATH
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           echo $PATH
-          ls /home
-          ls -lto /home/runner/.local/share/coursier/bin
+          
 
       - name: Check version
         run: |
