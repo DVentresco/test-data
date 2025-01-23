@@ -25,14 +25,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: add debug
-        run: | 
-          export DOCKER_CLI_DEBUG=1
-          export BUILDKIT_PROGRESS=plain
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           file: .github/workflows/Dockerfile
           push: true
-          tags: ${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
