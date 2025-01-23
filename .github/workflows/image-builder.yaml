@@ -30,4 +30,5 @@ jobs:
         with:
           file: .github/workflows/Dockerfile
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/dventresco/test-data:latest
+          #tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
